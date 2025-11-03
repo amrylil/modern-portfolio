@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 export function AboutSection() {
   return (
     <section id="about" className="py-20 font-mono ">
-      <div className="flex items-center flex-col px-20">
+      <div className="flex flex-col items-center px-4 sm:px-8 md:px-12 lg:px-20">
         <BlurText
           text="About Me"
           delay={160}
@@ -20,7 +20,7 @@ export function AboutSection() {
         />
 
         <BlurText
-          className="font-light text-lg w-full justify-between"
+          className="font-light text-xs md:text-lg w-full justify-between"
           text="I am a passionate Software Developer with strong expertise in backend development, primarily using Golang, Laravel, and JavaScript to build reliable and high-performance web applications. I have hands-on experience in designing and developing RESTful APIs, optimizing database performance, and integrating modern tools such as Express.js, React, Docker, and CI/CD pipelines to streamline development workflows. My interest in programming began with curiosity about how websites and systems work, which later grew into a deep commitment to mastering backend engineering and software architecture. Born on November 11, 2003, in North Kolaka, Southeast Sulawesi, I am currently pursuing a degree in Informatics Engineering at Universitas Dipa Makassar, where I continue to expand my technical knowledge and practical experience through academic projects and personal explorations. I strive to write clean, efficient, and maintainable code while constantly learning new technologies that enhance scalability and user experience. With a strong work ethic, attention to detail, and a passion for continuous growth, I aim to contribute meaningfully to teams and projects that create innovative and impactful digital solutions."
           delay={10}
         />
@@ -32,7 +32,7 @@ export function AboutSection() {
           viewport={{ once: true }}
         >
           <GitHubProfile />
-          <div className="w-full overflow-x-auto">
+          <div className="w-full overflow-x-auto ">
             <GitHubCalendar username="amrylil" />
           </div>
         </motion.div>
