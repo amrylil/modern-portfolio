@@ -38,7 +38,7 @@ export default function GitHubProfile() {
   }
 
   return (
-    <div className="flex flex-col items-center md:items-start gap-3 p-4 w-full md:w-96 border-r border-r-neutral-500">
+    <div className="flex flex-col items-center md:items-start gap-3 p-4 w-full md:w-96 border-r md:border-r-neutral-500">
       <div className="flex gap-4">
         <img
           src={profile.avatar_url}
@@ -46,7 +46,7 @@ export default function GitHubProfile() {
           className="w-24 h-24 rounded-full border-2 border-neutral-700"
         />
 
-        <div className="flex flex-col items-center md:items-start gap-1">
+        <div className="flex flex-col  md:items-start gap-1">
           <a
             href={profile.html_url}
             target="_blank"
@@ -55,7 +55,7 @@ export default function GitHubProfile() {
           >
             @{profile.login}
           </a>
-          <p className="text-sm text-neutral-300 mt-1 text-center md:text-left">
+          <p className="text-sm text-neutral-300 mt-1  md:text-left">
             {profile.bio || "No bio available"}
           </p>
           <div className="flex items-center text-xs gap-1.5">

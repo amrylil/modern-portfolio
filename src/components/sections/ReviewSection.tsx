@@ -7,13 +7,13 @@ import { testimonials } from "@/mock/data";
 export default function ReviewSection() {
   return (
     <>
-      <div className="px-20">
+      <div className="md:px-20 px-5">
         <BlurText
           text="What Clients Say"
           delay={160}
           animateBy="words"
           direction="top"
-          className="text-7xl tracking-tighter text-center mb-16 bg-clip-text from-neutral-50 to-neutral-400"
+          className="md:text-7xl text-4xl tracking-tighter text-center md:mb-16 mb-5 bg-clip-text from-neutral-50 to-neutral-400"
         />
 
         <BlurText
@@ -22,7 +22,7 @@ export default function ReviewSection() {
           delay={10}
         />
       </div>
-      <div className="mt-10 pb-10 rounded-md flex flex-col antialiased  items-center justify-center relative overflow-hidden">
+      <div className="text-xs md:text-xl mt-10 pb-10  rounded-md flex flex-col antialiased  items-center justify-center relative overflow-hidden">
         <InfiniteMovingCards
           items={testimonials}
           direction="right"

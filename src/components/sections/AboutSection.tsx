@@ -16,12 +16,17 @@ export function AboutSection() {
           delay={160}
           animateBy="words"
           direction="top"
-          className="text-7xl tracking-tighter text-center mb-16 bg-clip-text from-neutral-50 to-neutral-400"
+          className="md:text-7xl text-4xl tracking-tighter text-center md:mb-16 mb-5 bg-clip-text from-neutral-50 to-neutral-400"
         />
 
         <BlurText
-          className="font-light text-xs md:text-lg w-full justify-between"
+          className="font-light text-xs md:text-lg w-full justify-between hidden md:flex"
           text="I am a passionate Software Developer with strong expertise in backend development, primarily using Golang, Laravel, and JavaScript to build reliable and high-performance web applications. I have hands-on experience in designing and developing RESTful APIs, optimizing database performance, and integrating modern tools such as Express.js, React, Docker, and CI/CD pipelines to streamline development workflows. My interest in programming began with curiosity about how websites and systems work, which later grew into a deep commitment to mastering backend engineering and software architecture. Born on November 11, 2003, in North Kolaka, Southeast Sulawesi, I am currently pursuing a degree in Informatics Engineering at Universitas Dipa Makassar, where I continue to expand my technical knowledge and practical experience through academic projects and personal explorations. I strive to write clean, efficient, and maintainable code while constantly learning new technologies that enhance scalability and user experience. With a strong work ethic, attention to detail, and a passion for continuous growth, I aim to contribute meaningfully to teams and projects that create innovative and impactful digital solutions."
+          delay={10}
+        />
+        <BlurText
+          className="font-light text-xs md:text-lg w-full justify-between md:hidden"
+          text="I am a passionate Software Developer with strong expertise in backend development, primarily using Golang, Laravel, and JavaScript to build reliable and high-performance web applications. I have hands-on experience in designing and developing RESTful APIs, optimizing database performance, and integrating modern tools such as Express.js, React, Docker, and CI/CD pipelines to streamline development workflows. My interest in programming began with curiosity about how websites and systems work, which later grew into a deep commitment to mastering backend engineering "
           delay={10}
         />
         <motion.div
