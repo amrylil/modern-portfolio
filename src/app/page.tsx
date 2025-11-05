@@ -12,8 +12,8 @@ export default function Home() {
       <AboutSection />
       <ProjectSection />
       <ServiceSection />
-      {/* <ContactSections /> */}
       <ReviewSection />
+      <ContactSections />
     </div>
   );
 }

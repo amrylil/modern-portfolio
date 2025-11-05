@@ -63,35 +63,30 @@ export const techLogos = [
 
 export const products = [
   {
-    title: "Moonbeam",
-    link: "https://gomoonbeam.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/moonbeam.png",
+    title: "Sruput",
+    link: "https://sruput.gleeze.com",
+    thumbnail: "images/project/sruput.jpg",
   },
   {
-    title: "Cursor",
-    link: "https://cursor.so",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/cursor.png",
+    title: "Digital Hero",
+    link: "https://digitalhero.id",
+    thumbnail: "images/project/fronthero.png",
   },
   {
-    title: "Rogue",
-    link: "https://userogue.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/rogue.png",
+    title: "Hero Hub - Digital Hero",
+    link: "https://learn.digitalhero.id",
+    thumbnail: "images/project/learnhero.png",
   },
 
   {
-    title: "Editorially",
-    link: "https://editorially.org",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/editorially.png",
+    title: "Portal - Digital Hero",
+    link: "https://portal.digitalhero.id",
+    thumbnail: "images/project/portalhero.png",
   },
   {
-    title: "Editrix AI",
-    link: "https://editrix.ai",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/editrix.png",
+    title: "Helpdesk - LLDIKTI IX",
+    link: "https://learn.digitalhero.id",
+    thumbnail: "images/project/helpdesk.png",
   },
   {
     title: "Pixel Perfect",
@@ -182,7 +177,7 @@ export const timelineData = [
             className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60 filter brightness-75  transition-all duration-300 "
           />
           <img
-            src="images/helpdesk.png"
+            src="images/project/helpdesk.png"
             alt="startup template"
             width={500}
             height={500}
@@ -282,21 +277,21 @@ export const timelineData = [
             className="h-20 w-full rounded-lg object-contain shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60 filter brightness-75  transition-all duration-300 "
           />
           <img
-            src="images/fronthero.png"
+            src="images/project/fronthero.png"
             alt="feature template"
             width={500}
             height={500}
             className="h-20 w-full rounded-lg object-contain shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60 filter brightness-75  transition-all duration-300 "
           />
           <img
-            src="images/learnhero.png"
+            src="images/project/learnhero.png"
             alt="bento template"
             width={500}
             height={500}
             className="h-20 w-full rounded-lg object-contain shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60 filter brightness-75  transition-all duration-300 "
           />
           <img
-            src="images/portalhero.png"
+            src="images/project/portalhero.png"
             alt="cards template"
             width={500}
             height={500}

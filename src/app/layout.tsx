@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/resizable-navbar";
 import { useState } from "react";
 import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect";
+import Footer from "@/components/shared/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -70,7 +71,6 @@ export default function RootLayout({
             </div>
           </NavBody>
 
-          {/* Mobile Navigation */}
           <MobileNav>
             <MobileNavHeader>
               <NavbarLogo />
@@ -107,6 +107,7 @@ export default function RootLayout({
           </MobileNav>
         </Navbar>
         {children}
+        <Footer />
       </body>
     </html>
   );
