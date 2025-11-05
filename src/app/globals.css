@@ -154,7 +154,7 @@
 .blur-text {
   animation: blurFadeUp 1s forwards;
   animation-timeline: view();           /* pakai viewport sebagai timeline */
-  animation-range: entry 0 cover 40%;   /* trigger dari saat elemen mulai masuk sampai 40% viewport */
+  animation-range: entry 0 cover 60%;   /* trigger dari saat elemen mulai masuk sampai 40% viewport */
 }
 
 

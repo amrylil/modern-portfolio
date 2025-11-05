@@ -41,7 +41,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       <div className="max-w-7xl mx-auto  px-4 md:px-8 lg:px-10">
         <BlurText
           text="My Journey and Experiences"
-          delay={160}
+          delay={10}
           animateBy="words"
           direction="top"
           className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl"
@@ -50,7 +50,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         <BlurText
           text="Over the past two years, I have gained experience through my
           internship and personal learning journey in software development."
-          delay={50}
+          delay={10}
           animateBy="words"
           direction="top"
           className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm"

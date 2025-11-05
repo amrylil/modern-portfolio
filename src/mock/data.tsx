@@ -167,7 +167,7 @@ export const timelineData = [
           applications. My primary tech stack included Golang (using the Gin
           framework) for building robust APIs, React for the frontend interface,
           and Microsoft SQL Server for database management."
-          delay={10}
+          delay={3}
           animateBy="words"
           direction="top"
           className="mb-4 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200 w-full justify-start"
@@ -217,7 +217,7 @@ export const timelineData = [
           experience with AWS services, Linux, Python, and database
           fundamentals, preparing me for a career in cloud infrastructure and
           development."
-          delay={10}
+          delay={3}
           animateBy="words"
           direction="top"
           className="mb-4 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200 w-full justify-start"
@@ -267,7 +267,7 @@ export const timelineData = [
           responsibility was single-handedly handling the deployment of four
           separate applications, for which I successfully implemented automated
           CI/CD pipelines using Docker."
-          delay={10}
+          delay={3}
           animateBy="words"
           direction="top"
           className="mb-4 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200 w-full justify-start"
