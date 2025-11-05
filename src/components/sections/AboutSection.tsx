@@ -82,12 +82,7 @@ export function AboutSection() {
         </motion.div>
       </div>
 
-      <motion.div
-        className="relative w-full overflow-clip mx-auto"
-        variants={itemVariants}
-      >
-        <Timeline data={timelineData} />
-      </motion.div>
+      <Timeline data={timelineData} />
     </motion.section>
   );
 }

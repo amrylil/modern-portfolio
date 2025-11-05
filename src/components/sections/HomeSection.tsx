@@ -1,5 +1,4 @@
 "use client";
-// 1. Impor 'Variants' dari framer-motion
 import { motion, Variants } from "framer-motion";
 import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect";
 import { SiGithub, SiLinkedin, SiMailboxdotorg } from "react-icons/si";
@@ -7,7 +6,6 @@ import LogoLoop from "@/components/ui/LogoLoop";
 import BlurText from "@/components/ui/BlurText";
 import { techLogos } from "@/mock/data";
 
-// 2. Tambahkan tipe ': Variants' ke konstanta Anda
 const iconContainerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
@@ -26,7 +24,6 @@ const iconContainerVariants: Variants = {
   },
 };
 
-// 3. Tambahkan tipe ': Variants' di sini juga
 const iconVariants: Variants = {
   hidden: { y: 20, opacity: 0 },
   visible: {
@@ -86,7 +83,6 @@ export function HomeSection() {
                 </div>
               </div>
 
-              {/* --- ANIMASI IKON SOSMED DIMULAI --- */}
               <motion.div
                 className="flex flex-row gap-4 md:mt-12 mt-8 "
                 variants={iconContainerVariants} // Sekarang ini sudah benar tipenya
@@ -120,10 +116,8 @@ export function HomeSection() {
                   <SiMailboxdotorg className="h-6 w-6" />
                 </motion.a>
               </motion.div>
-              {/* --- ANIMASI IKON SOSMED SELESAI --- */}
             </div>
 
-            {/* --- ANIMASI GAMBAR DAN SVG DIMULAI --- */}
             <motion.div
               className="relative md:p-8 p-6 -translate-y-10 order-1 md:order-2"
               initial={{ opacity: 0, y: -20 }}
@@ -170,10 +164,8 @@ export function HomeSection() {
                 ></motion.circle>
               </motion.svg>
             </motion.div>
-            {/* --- ANIMASI GAMBAR DAN SVG SELESAI --- */}
           </div>
 
-          {/* --- ANIMASI LOGOLOOP 1 (DESKTOP) --- */}
           <motion.div
             className="mt-10 "
             initial={{ opacity: 0 }}
@@ -195,7 +187,6 @@ export function HomeSection() {
             />
           </motion.div>
 
-          {/* --- ANIMASI LOGOLOOP 2 (MOBILE) --- */}
           <motion.div
             className="md:hidden"
             initial={{ opacity: 0 }}

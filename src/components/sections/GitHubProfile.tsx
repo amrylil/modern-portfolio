@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-// 1. Impor ikon yang akan kita gunakan
 import { GoRepo, GoPerson, GoLocation, GoOrganization } from "react-icons/go";
 
 interface GitHubProfile {
