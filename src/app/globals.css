@@ -136,4 +136,26 @@
   }
 }
 
+/* 1. Definisikan animasi */
+@keyframes blurFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* 2. Hubungkan ke scroll-timeline */
+.blur-text {
+  animation: blurFadeUp 1s forwards;
+  animation-timeline: view();           /* pakai viewport sebagai timeline */
+  animation-range: entry 0 cover 40%;   /* trigger dari saat elemen mulai masuk sampai 40% viewport */
+}
+
+
 
