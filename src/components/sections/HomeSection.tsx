@@ -13,16 +13,16 @@ export function HomeSection() {
       className="relative flex min-h-screen w-full flex-col items-start justify-start overflow-hidden bg-black "
     >
       <BackgroundRippleEffect />
-      <div className="mt-20 w-full px-20">
+      <div className="md:mt-20 mt-24 w-full md:px-20 px-5">
         <div className="max-w-7xl mx-auto w-full z-10">
-          <div className="flex gap-2 justify-center items-center">
-            <div className="">
+          <div className="flex gap-2 justify-center items-center flex-col md:flex-row">
+            <div className="order-2 md:order-1 flex flex-col justify-center items-center md:items-start">
               <BlurText
                 text="Hi, I'm Ulil Amry Al Qadri"
                 delay={160}
                 animateBy="words"
                 direction="top"
-                className="text-neutral-400 text-lg"
+                className="text-neutral-400 md:text-lg"
               />
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-4">
@@ -31,11 +31,28 @@ export function HomeSection() {
                   delay={150}
                   animateBy="words"
                   direction="top"
-                  className="text-6xl md:text-8xl tracking-tighter"
+                  className="text-5xl md:text-8xl tracking-tighter hidden md:flex"
                 />
+
+                <div className="flex flex-col justify-center items-center md:hidden">
+                  <BlurText
+                    text="Software"
+                    delay={150}
+                    animateBy="letters"
+                    direction="top"
+                    className="text-5xl  tracking-tighter "
+                  />
+                  <BlurText
+                    text="Developer"
+                    delay={150}
+                    animateBy="letters"
+                    direction="top"
+                    className="text-5xl tracking-tighter "
+                  />
+                </div>
               </div>
 
-              <div className="flex flex-row gap-4 mt-12">
+              <div className="flex flex-row gap-4 md:mt-12 mt-8 ">
                 <a
                   href="https://github.com"
                   target="_blank"
@@ -60,7 +77,7 @@ export function HomeSection() {
                 </a>
               </div>
             </div>
-            <div className="relative md:p-8 p-6 -translate-y-10">
+            <div className="relative md:p-8 p-6 -translate-y-10 order-1 md:order-2">
               <div className=" md:h-[450px] md:w-[450px] h-[230px] w-[230px] overflow-hidden   transition-all animate-fade-up animate-once animate-duration-[1000ms] rounded-lg mix-blend-lighten">
                 <img
                   src="images/anuku2.png"
@@ -70,7 +87,7 @@ export function HomeSection() {
               </div>
 
               <motion.svg
-                className="transition-all animate-fade-up animate-once animate-duration-[2000ms] md:w-[450px] w-350px] absolute md:top-14 md:right-9 top-7 right-3"
+                className="transition-all animate-fade-up animate-once animate-duration-[2000ms] md:w-[450px] w-[250px] absolute md:top-14 md:right-9 top-7 right-4"
                 fill="transparent"
                 viewBox="0 0 506 506"
                 xmlns="http://www.w3.org/2000/svg"
@@ -107,10 +124,10 @@ export function HomeSection() {
             logos={techLogos}
             speed={30}
             direction="left"
-            logoHeight={48}
-            gap={40}
+            logoHeight={18}
+            gap={30}
             pauseOnHover
-            scaleOnHover
+            scaleOnHover={true}
             fadeOut
             fadeOutColor="black"
             ariaLabel="Technology partners"

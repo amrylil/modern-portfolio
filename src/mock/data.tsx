@@ -56,7 +56,7 @@ export const techLogos = [
   },
   {
     node: <SiGo />,
-    title: "Tailwind CSS",
+    title: "Golang",
     href: "https://golang.com",
   },
 ];

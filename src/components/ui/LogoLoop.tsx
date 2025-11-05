@@ -353,13 +353,17 @@ export const LogoLoop = React.memo<LogoLoopProps>(
         return (
           <li
             className={cx(
-              "flex-none mr-[var(--logoloop-gap)] text-[length:var(--logoloop-logoHeight)] leading-[1]",
+              "flex items-center justify-center mr-[var(--logoloop-gap)] gap-3",
+              "text-center ",
               scaleOnHover && "overflow-visible group/item"
             )}
             key={key}
             role="listitem"
           >
-            {inner}
+            <div className="md:text-3xl">{inner}</div>
+            {(item as any).title && (
+              <p className="md:text-xl mb-1">{(item as any).title}</p>
+            )}
           </li>
         );
       },
