@@ -13,7 +13,10 @@ const ContactSections = () => {
   if (!mounted) return null;
 
   return (
-    <div className=" text-slate-50 flex md:px-24 px-5 items-center justify-between md:mb-20 mb-5">
+    <div
+      id="contact"
+      className=" text-slate-50 flex md:px-24 px-5 items-center justify-between md:mb-20 mb-5"
+    >
       <div className="container md:mx-auto">
         <div className="flex flex-wrap justify-center">
           <div className="w-full lg:w-1/2">

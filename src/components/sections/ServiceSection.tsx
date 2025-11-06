@@ -104,7 +104,6 @@ const accordionContentVariants: Variants = {
   },
 };
 
-// --- Komponen Accordion Item ---
 const ServiceAccordionItem: React.FC<ServiceAccordionItemProps> = ({
   item,
   isOpen,
@@ -112,6 +111,7 @@ const ServiceAccordionItem: React.FC<ServiceAccordionItemProps> = ({
 }) => {
   return (
     <motion.div
+      id="service"
       className="border border-neutral-800 rounded-lg flex flex-col mt-2   p-5 "
       variants={itemVariants}
     >

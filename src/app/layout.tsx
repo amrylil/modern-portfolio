@@ -39,13 +39,14 @@ export default function RootLayout({
       link: "/",
     },
     {
-      name: "Project",
-      link: "#project",
-    },
-    {
       name: "About",
       link: "#about",
     },
+    {
+      name: "Project",
+      link: "#project",
+    },
+
     {
       name: "Services",
       link: "#service",

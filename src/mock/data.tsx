@@ -2,8 +2,14 @@
 
 import BlurText from "@/components/ui/BlurText";
 import {
+  SiDocker,
+  SiExpress,
   SiGo,
+  SiJavascript,
+  SiLaravel,
+  SiNestjs,
   SiNextdotjs,
+  SiPhp,
   SiReact,
   SiTailwindcss,
   SiTypescript,
@@ -45,6 +51,11 @@ export const techLogos = [
   { node: <SiReact />, title: "React", href: "https://react.dev" },
   { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
   {
+    node: <SiJavascript />,
+    title: "JavaScript",
+    href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+  },
+  {
     node: <SiTypescript />,
     title: "TypeScript",
     href: "https://www.typescriptlang.org",
@@ -57,18 +68,47 @@ export const techLogos = [
   {
     node: <SiGo />,
     title: "Golang",
-    href: "https://golang.com",
+    href: "https://go.dev",
+  },
+  {
+    node: <SiLaravel />,
+    title: "Laravel",
+    href: "https://laravel.com",
+  },
+  {
+    node: <SiPhp />,
+    title: "PHP",
+    href: "https://www.php.net",
+  },
+  {
+    node: <SiExpress />,
+    title: "Express.js",
+    href: "https://expressjs.com",
+  },
+  {
+    node: <SiNestjs />,
+    title: "NestJS",
+    href: "https://nestjs.com",
+  },
+  {
+    node: <SiDocker />,
+    title: "Docker",
+    href: "https://www.docker.com",
   },
 ];
-
 export const products = [
   {
-    title: "Sruput",
-    link: "https://sruput.gleeze.com",
-    thumbnail: "images/project/sruput.jpg",
+    title: "Portal Digital Hero",
+    link: "https://portal.digitalhero.id",
+    thumbnail: "images/project/portalhero.png",
   },
   {
-    title: "Digital Hero",
+    title: "Helpdesk LLDIKTI IX Demo",
+    link: "https://helpdesk-demo.vercel.app",
+    thumbnail: "images/project/helpdesk.png",
+  },
+  {
+    title: "Digital Hero App",
     link: "https://digitalhero.id",
     thumbnail: "images/project/fronthero.png",
   },
@@ -77,80 +117,33 @@ export const products = [
     link: "https://learn.digitalhero.id",
     thumbnail: "images/project/learnhero.png",
   },
-
   {
-    title: "Portal - Digital Hero",
-    link: "https://portal.digitalhero.id",
-    thumbnail: "images/project/portalhero.png",
+    title: "Sruput",
+    link: "https://sruput.gleeze.com",
+    thumbnail: "images/project/sruput.jpg",
   },
   {
-    title: "Helpdesk - LLDIKTI IX",
-    link: "https://learn.digitalhero.id",
-    thumbnail: "images/project/helpdesk.png",
+    title: "Liltech - Portfolio Website",
+    link: "https://liltech.me/",
+    thumbnail: "images/project/liltech.png",
   },
   {
-    title: "Pixel Perfect",
-    link: "https://app.pixelperfect.quest",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/pixelperfect.png",
-  },
-
-  {
-    title: "Algochurn",
-    link: "https://algochurn.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/algochurn.png",
+    title: "Kerjamail Clone - Test Case",
+    link: "https://kerjamail.vercel.app/",
+    thumbnail: "images/project/kerjamail.png",
   },
   {
-    title: "Aceternity UI",
-    link: "https://ui.aceternity.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/aceternityui.png",
+    title: "Hotel App",
+    link: "#", // tidak ada preview
+    thumbnail: "images/project/hotel.png",
   },
   {
-    title: "Tailwind Master Kit",
-    link: "https://tailwindmasterkit.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/tailwindmasterkit.png",
-  },
-  {
-    title: "SmartBridge",
-    link: "https://smartbridgetech.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/smartbridge.png",
-  },
-  {
-    title: "Renderwork Studio",
-    link: "https://renderwork.studio",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/renderwork.png",
-  },
-
-  {
-    title: "Creme Digital",
-    link: "https://cremedigital.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/cremedigital.png",
-  },
-  {
-    title: "Golden Bells Academy",
-    link: "https://goldenbellsacademy.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/goldenbellsacademy.png",
-  },
-  {
-    title: "Invoker Labs",
-    link: "https://invoker.lol",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/invoker.png",
-  },
-  {
-    title: "E Free Invoice",
-    link: "https://efreeinvoice.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/efreeinvoice.png",
+    title: "Donor App",
+    link: "#", // tidak ada preview
+    thumbnail: "images/project/donor.jpg",
   },
 ];
+
 export const timelineData = [
   {
     title: "2024",
