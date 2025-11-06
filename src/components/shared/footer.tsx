@@ -118,7 +118,7 @@ const Footer: React.FC = () => {
           <p className="text-center text-sm text-[var(--white-icon)] space-y-2">
             <span className="block sm:inline">
               Copyright © 2025{" "}
-              <a href="https://github.com/Gothsec">Ulil Amry Al Qadri</a>. All
+              <a href="https://github.com/amrylil">Ulil Amry Al Qadri</a>. All
               rights reserved.
             </span>
           </p>

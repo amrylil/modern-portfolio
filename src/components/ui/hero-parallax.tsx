@@ -134,7 +134,9 @@ export const ProductCard = ({
         y: -20,
       }}
       key={product.title}
-      className="group/product h-96 w-[30rem] relative shrink-0"
+      className="group/product w-[30rem] h-56   
+    sm:w-[50rem] sm:h-72 
+    md:w-[50rem] md:h-96 relative shrink-0"
     >
       <a href={product.link} className="block group-hover/product:shadow-2xl ">
         <img
