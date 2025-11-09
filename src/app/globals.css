@@ -157,5 +157,14 @@
   animation-range: entry 0 cover 60%;   /* trigger dari saat elemen mulai masuk sampai 40% viewport */
 }
 
+.scrollbar-hidden {
+  overflow: auto;            /* tetap bisa scroll */
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari, Edge */
+}
 
 
