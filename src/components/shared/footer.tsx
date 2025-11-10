@@ -101,15 +101,19 @@ const Footer: React.FC = () => {
           </div>
 
           <div className="flex flex-col items-center lg:items-start space-y-6">
-            <div className="w-full max-w-xs">
-              <iframe
-                style={{ borderRadius: "12px", border: "0" }}
-                src="https://open.spotify.com/embed/playlist/2irOd49FRRLFWYccolQeea?utm_source=generator&theme=0&locale=en_US"
-                className="w-full h-40"
-                allowFullScreen={true}
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"
-              ></iframe>
+            <div className="flex flex-col items-center lg:items-start space-y-6">
+              <div className="flex flex-col items-center lg:items-start space-y-6">
+                <div className="w-full max-w-xs">
+                  <iframe
+                    style={{ borderRadius: "12px", border: "0" }}
+                    src="https://open.spotify.com/embed/track/31CsSZ9KlQmEu0JvWSkM3j?utm_source=generator"
+                    className="w-full h-40"
+                    allowFullScreen={true}
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"
+                  ></iframe>
+                </div>
+              </div>
             </div>
           </div>
         </div>
