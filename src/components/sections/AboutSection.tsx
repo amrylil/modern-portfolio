@@ -33,13 +33,13 @@ export function AboutSection() {
   return (
     <motion.section
       id="about"
-      className="md:py-20 font-mono"
+      className="md:py-20 font-mono  md:px-20 px-5"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
     >
-      <div className="flex flex-col items-center px-4 sm:px-8 md:px-12 lg:px-20">
+      <div className="flex flex-col items-center  max-w-7xl mx-auto">
         <motion.div variants={itemVariants}>
           <BlurText
             text="About Me"

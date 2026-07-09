@@ -11,7 +11,7 @@ export function ProjectSection() {
           <HoverBorderGradient
             containerClassName="rounded"
             as="button"
-            className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
+            className="dark:bg-black text-black dark:text-white flex items-center space-x-2"
           >
             Open All Project
           </HoverBorderGradient>

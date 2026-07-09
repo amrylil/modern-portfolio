@@ -72,10 +72,10 @@ export function HomeSection() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen w-full flex-col items-start justify-start overflow-hidden bg-black "
+      className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-black "
     >
-      <BackgroundRippleEffect />
-      <div className="md:mt-28 mt-24 w-full md:px-20 px-5">
+      <BackgroundRippleEffect cols={100} />
+      <div className="w-full md:px-20 px-5">
         <div className="max-w-7xl mx-auto w-full z-10">
           <div className="flex gap-2 justify-center items-center flex-col md:flex-row">
             <div className="order-2 md:order-1 flex flex-col justify-center items-center md:items-start">
