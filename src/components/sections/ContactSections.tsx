@@ -15,9 +15,9 @@ const ContactSections = () => {
   return (
     <div
       id="contact"
-      className=" text-slate-50 flex md:px-24 px-5 items-center justify-between md:mb-20 mb-5"
+      className=" text-slate-50 flex px-4 sm:px-8 md:px-12 lg:px-20  items-center justify-between md:mb-20 mb-5"
     >
-      <div className="container md:mx-auto">
+      <div className=" max-w-7xl md:mx-auto">
         <div className="flex flex-wrap justify-center">
           <div className="w-full lg:w-1/2">
             <h1 className="md:text-6xl  text-3xl mb-8">

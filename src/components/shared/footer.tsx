@@ -55,7 +55,7 @@ const techStack: TechInfo[] = [
 const Footer: React.FC = () => {
   return (
     <footer className="w-full py-12 border-t border-[#ffffff10]">
-      <div className=" mx-auto md:px-24 px-5">
+      <div className=" mx-auto md:px-24 px-5 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-10">
           <div className="flex flex-col lg:items-start items-center space-y-6 gap-9">
             <div className="flex space-x-6 sm:space-x-8">

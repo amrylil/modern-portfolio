@@ -1,6 +1,5 @@
 "use client";
 
-import BlurText from "@/components/ui/BlurText";
 import {
   SiDocker,
   SiExpress,
@@ -134,12 +133,12 @@ export const products = [
   },
   {
     title: "Hotel App",
-    link: "#", // tidak ada preview
+    link: "#",
     thumbnail: "images/project/hotel.png",
   },
   {
     title: "Donor App",
-    link: "#", // tidak ada preview
+    link: "#",
     thumbnail: "images/project/donor.jpg",
   },
 ];
@@ -149,17 +148,13 @@ export const timelineData = [
     title: "2024",
     content: (
       <div>
-        <BlurText
-          text="As a Backend Developer Intern at LLDIKTI Wilayah IX through the MSIB
+        <p className="mb-4 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200 w-full text-justify">
+          As a Backend Developer Intern at LLDIKTI Wilayah IX through the MSIB
           Batch 7 program, I was responsible for developing and maintaining web
           applications. My primary tech stack included Golang (using the Gin
           framework) for building robust APIs, React for the frontend interface,
-          and Microsoft SQL Server for database management."
-          delay={3}
-          animateBy="words"
-          direction="top"
-          className="mb-4 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200 w-full justify-start"
-        />
+          and Microsoft SQL Server for database management.
+        </p>
 
         <div className="grid grid-cols-2 gap-4">
           <img
@@ -167,28 +162,28 @@ export const timelineData = [
             alt="startup template"
             width={500}
             height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60 filter brightness-75  transition-all duration-300 "
+            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60 filter brightness-75 hover:brightness-100 transition-all"
           />
           <img
             src="images/project/helpdesk.png"
             alt="startup template"
             width={500}
             height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60 filter brightness-75  transition-all duration-300 "
+            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60 filter brightness-75 hover:brightness-100 transition-all"
           />
           <img
             src="images/sertif.png"
             alt="startup template"
             width={500}
             height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60 filter brightness-75  transition-all duration-300 "
+            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60 filter brightness-75 hover:brightness-100 transition-all"
           />
           <img
             src="images/sisfoy2.jpg"
             alt="startup template"
             width={500}
             height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60 filter brightness-75  transition-all duration-300 "
+            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60 filter brightness-75 hover:brightness-100 transition-all"
           />
         </div>
       </div>
@@ -198,18 +193,14 @@ export const timelineData = [
     title: "Early 2025",
     content: (
       <div>
-        <BlurText
-          text="I successfully completed the AWS re/Start program, an intensive,
+        <p className="mb-4 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200 w-full text-justify">
+          I successfully completed the AWS re/Start program, an intensive,
           full-time skills development program focused on cloud computing.
           Delivered by Future Academy, the curriculum provided hands-on
           experience with AWS services, Linux, Python, and database
           fundamentals, preparing me for a career in cloud infrastructure and
-          development."
-          delay={3}
-          animateBy="words"
-          direction="top"
-          className="mb-4 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200 w-full justify-start"
-        />
+          development.
+        </p>
 
         <div className="grid grid-cols-2 gap-4">
           <img
@@ -217,28 +208,28 @@ export const timelineData = [
             alt="hero template"
             width={500}
             height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60 filter brightness-75  transition-all duration-300 "
+            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60 filter brightness-75 hover:brightness-100 transition-all"
           />
           <img
             src="images/aws-sertif.jpeg"
             alt="feature template"
             width={500}
             height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60 filter brightness-75  transition-all duration-300 "
+            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60 filter brightness-75 hover:brightness-100 transition-all"
           />
           <img
             src="images/arch.png"
             alt="bento template"
             width={500}
             height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60 filter brightness-75  transition-all duration-300 "
+            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60 filter brightness-75 hover:brightness-100 transition-all"
           />
           <img
             src="images/awsmeet.png"
             alt="cards template"
             width={500}
             height={500}
-            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60 filter brightness-75  transition-all duration-300 "
+            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60 filter brightness-75 hover:brightness-100 transition-all"
           />
         </div>
       </div>
@@ -248,18 +239,14 @@ export const timelineData = [
     title: "Mid 2025",
     content: (
       <div>
-        <BlurText
-          text="As a Lead Fullstack Developer Intern at Digitalhero Indonesia
+        <p className="mb-4 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200 w-full text-justify">
+          As a Lead Fullstack Developer Intern at Digitalhero Indonesia
           (Remote), I managed projects using a modern stack including
           TypeScript, Express.js, React, Bun, and PostgreSQL. A key
           responsibility was single-handedly handling the deployment of four
           separate applications, for which I successfully implemented automated
-          CI/CD pipelines using Docker."
-          delay={3}
-          animateBy="words"
-          direction="top"
-          className="mb-4 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200 w-full justify-start"
-        />
+          CI/CD pipelines using Docker.
+        </p>
 
         <div className="grid grid-cols-2 gap-4">
           <img
@@ -267,28 +254,28 @@ export const timelineData = [
             alt="hero template"
             width={500}
             height={500}
-            className="h-20 w-full rounded-lg object-contain shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60 filter brightness-75  transition-all duration-300 "
+            className="h-20 w-full rounded-lg object-contain shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60 filter brightness-75 hover:brightness-100 transition-all"
           />
           <img
             src="images/project/fronthero.png"
             alt="feature template"
             width={500}
             height={500}
-            className="h-20 w-full rounded-lg object-contain shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60 filter brightness-75  transition-all duration-300 "
+            className="h-20 w-full rounded-lg object-contain shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60 filter brightness-75 hover:brightness-100 transition-all"
           />
           <img
             src="images/project/learnhero.png"
             alt="bento template"
             width={500}
             height={500}
-            className="h-20 w-full rounded-lg object-contain shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60 filter brightness-75  transition-all duration-300 "
+            className="h-20 w-full rounded-lg object-contain shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60 filter brightness-75 hover:brightness-100 transition-all"
           />
           <img
             src="images/project/portalhero.png"
             alt="cards template"
             width={500}
             height={500}
-            className="h-20 w-full rounded-lg object-contain shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60 filter brightness-75  transition-all duration-300 "
+            className="h-20 w-full rounded-lg object-contain shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60 filter brightness-75 hover:brightness-100 transition-all"
           />
         </div>
       </div>

@@ -19,7 +19,7 @@ interface ServiceAccordionItemProps {
 const serviceData: ServiceItem[] = [
   {
     title: "Web Development",
-    icon: <Globe className="h-6 w-6 text-purple-400" />,
+    icon: <Globe className="h-6 w-6 text-slate-50" />,
     content: [
       "Single Page Applications (SPAs)",
       "Landing pages and business websites",
@@ -29,7 +29,7 @@ const serviceData: ServiceItem[] = [
   },
   {
     title: "Mobile Development",
-    icon: <Smartphone className="h-6 w-6 text-purple-400" />,
+    icon: <Smartphone className="h-6 w-6 text-slate-50" />,
     content: [
       "Cross-platform development (React Native)",
       "Native iOS & Android (learning)",
@@ -38,7 +38,7 @@ const serviceData: ServiceItem[] = [
   },
   {
     title: "UI/UX Design & Prototyping",
-    icon: <Paintbrush className="h-6 w-6 text-purple-400" />,
+    icon: <Paintbrush className="h-6 w-6 text-slate-50" />,
     content: [
       "Wireframing and low-fidelity mockups",
       "High-fidelity interactive prototypes (Figma)",
@@ -47,7 +47,7 @@ const serviceData: ServiceItem[] = [
   },
   {
     title: "Backend & DevOps",
-    icon: <Code className="h-6 w-6 text-purple-400" />,
+    icon: <Code className="h-6 w-6 text-slate-50" />,
     content: [
       "RESTful API development (Golang, Express.js)",
       "Database management (PostgreSQL, SQL Server)",
@@ -180,7 +180,7 @@ const DecorativeCodeBlock: React.FC = () => {
       variants={itemVariants}
     >
       <pre
-        className="text-xs leading-relaxed text-purple-400 opacity-20"
+        className="text-xs leading-relaxed text-slate-50 opacity-20"
         aria-hidden="true"
       >
         {code}
@@ -210,7 +210,7 @@ export default function ServiceSection(): React.ReactElement {
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
     >
-      <div className="mx-auto px-4 sm:px-8 md:px-12 lg:px-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-8 md:px-12 lg:px-20">
         <motion.div variants={itemVariants}>
           <h2 className="md:text-7xl text-4xl tracking-tighter mb-10">
             What I do?
