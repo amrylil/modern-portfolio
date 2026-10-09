@@ -54,8 +54,8 @@ const techStack: TechInfo[] = [
 
 const Footer: React.FC = () => {
   return (
-    <footer className="w-full py-12 border-t border-[#ffffff10]">
-      <div className=" mx-auto md:px-24 px-5 max-w-7xl">
+    <footer className="w-full py-12 border-t border-neutral-200 dark:border-[#ffffff10] bg-white dark:bg-neutral-950/80 transition-colors duration-300">
+      <div className="mx-auto md:px-24 px-5 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-10">
           <div className="flex flex-col lg:items-start items-center space-y-6 gap-9">
             <div className="flex space-x-6 sm:space-x-8">
@@ -89,7 +89,7 @@ const Footer: React.FC = () => {
                   <img
                     src={tech.icon}
                     alt={tech.alt}
-                    className="h-5 w-5 object-contain filter brightness-0 invert opacity-50"
+                    className="h-5 w-5 object-contain filter dark:brightness-0 dark:invert opacity-70 dark:opacity-50"
                     loading="lazy"
                   />
                   <span className="text-[var(--white-icon)] text-sm">
@@ -101,29 +101,27 @@ const Footer: React.FC = () => {
           </div>
 
           <div className="flex flex-col items-center lg:items-start space-y-6">
-            <div className="flex flex-col items-center lg:items-start space-y-6">
-              <div className="flex flex-col items-center lg:items-start space-y-6">
-                <div className="w-full max-w-xs">
-                  <iframe
-                    style={{ borderRadius: "12px", border: "0" }}
-                    src="https://open.spotify.com/embed/track/31CsSZ9KlQmEu0JvWSkM3j?utm_source=generator"
-                    className="w-full h-40"
-                    allowFullScreen={true}
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                    loading="lazy"
-                  ></iframe>
-                </div>
-              </div>
+            <div className="w-full max-w-xs">
+              <iframe
+                style={{ borderRadius: "12px", border: "0" }}
+                src="https://open.spotify.com/embed/track/31CsSZ9KlQmEu0JvWSkM3j?utm_source=generator"
+                className="w-full h-40"
+                allowFullScreen={true}
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              ></iframe>
             </div>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-[#ffffff10]">
+        <div className="mt-12 pt-8 border-t border-neutral-200 dark:border-[#ffffff10]">
           <p className="text-center text-sm text-[var(--white-icon)] space-y-2">
             <span className="block sm:inline">
               Copyright © 2025{" "}
-              <a href="https://github.com/amrylil">Ulil Amry Al Qadri</a>. All
-              rights reserved.
+              <a href="https://github.com/amrylil" className="font-medium text-neutral-900 dark:text-white hover:underline">
+                Ulil Amry Al Qadri
+              </a>
+              . All rights reserved.
             </span>
           </p>
         </div>

@@ -1,0 +1,130 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  name      String
+  password  String
+  role      String   @default("ADMIN")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("portfolio_users")
+}
+
+model Profile {
+  id             Int      @id @default(autoincrement())
+  name           String   @default("Ulil Amry Al Qadri")
+  title          String   @default("Software Developer")
+  greeting       String   @default("Hi, I'm Ulil Amry Al Qadri")
+  avatarUrl      String   @default("/images/anuku2.png")
+  bio            String   @db.Text
+  aboutMe        String   @db.Text
+  aboutMeMobile  String?  @db.Text
+  email          String   @default("ulilamry432@gmail.com")
+  phone          String   @default("+62 823 7839 8419")
+  address        String   @default("Jl. Perintis Kemerdekaan 7, Tamalanrea Indah, Tamalanrea District, Makassar City, South Sulawesi, Indonesia")
+  githubUsername String   @default("amrylil")
+  githubUrl      String   @default("https://github.com/amrylil")
+  linkedinUrl    String   @default("https://www.linkedin.com/in/ulil-amry-al-qadri-363a841b3/")
+  resumeUrl      String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@map("portfolio_profile")
+}
+
+model Skill {
+  id        Int      @id @default(autoincrement())
+  title     String
+  icon      String
+  href      String
+  category  String?  @default("Tech")
+  order     Int      @default(0)
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("portfolio_skills")
+}
+
+model Project {
+  id          Int      @id @default(autoincrement())
+  title       String
+  slug        String   @unique
+  description String   @db.Text
+  image       String   // Main cover/thumbnail
+  images      String?  @db.Text // JSON string array of multiple screenshot/preview images
+  videoUrl    String?  @db.Text // Demo video URL (uploaded file or YouTube/Vimeo link)
+  link        String?
+  preview     String?
+  status      String   @default("Deployed")
+  isPrivate   Boolean  @default(false)
+  isFeatured  Boolean  @default(true)
+  tools       String   @db.Text // JSON string array of technologies
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("portfolio_projects")
+}
+
+model Timeline {
+  id          Int      @id @default(autoincrement())
+  title       String // Year or period, e.g. "2024", "Early 2025"
+  role        String?
+  company     String?
+  description String   @db.Text
+  images      String   @db.Text // JSON string array of image paths
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("portfolio_timelines")
+}
+
+model Service {
+  id        Int      @id @default(autoincrement())
+  title     String
+  icon      String // Icon identifier, e.g. "Globe", "Smartphone", "Paintbrush", "Code"
+  content   String   @db.Text // JSON string array of features/points
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("portfolio_services")
+}
+
+model Testimonial {
+  id        Int      @id @default(autoincrement())
+  name      String
+  title     String
+  quote     String   @db.Text
+  avatar    String?
+  rating    Int      @default(5)
+  order     Int      @default(0)
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("portfolio_testimonials")
+}
+
+model ContactMessage {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String
+  message   String   @db.Text
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("portfolio_contact_messages")
+}

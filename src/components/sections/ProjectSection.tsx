@@ -9,9 +9,9 @@ export function ProjectSection() {
       <div className="flex justify-center text-center md:mb-20  -translate-y-1 md:translate-y-0">
         <Link href="/project">
           <HoverBorderGradient
-            containerClassName="rounded"
+            containerClassName="rounded-full shadow-sm"
             as="button"
-            className="dark:bg-black text-black dark:text-white flex items-center space-x-2"
+            className="flex items-center space-x-2 text-sm font-medium"
           >
             Open All Project
           </HoverBorderGradient>

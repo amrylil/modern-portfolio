@@ -72,7 +72,7 @@ export function HomeSection() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-black "
+      className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-white dark:bg-black text-neutral-900 dark:text-neutral-100 transition-colors duration-300"
     >
       <BackgroundRippleEffect cols={100} />
       <div className="w-full md:px-20 px-5">
@@ -84,7 +84,7 @@ export function HomeSection() {
                 delay={160}
                 animateBy="words"
                 direction="top"
-                className="text-neutral-400 md:text-lg"
+                className="text-neutral-600 dark:text-neutral-400 md:text-lg"
               />
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-4">
@@ -93,7 +93,7 @@ export function HomeSection() {
                   delay={150}
                   animateBy="words"
                   direction="top"
-                  className="text-5xl md:text-8xl tracking-tighter hidden md:flex"
+                  className="text-5xl md:text-8xl tracking-tighter hidden md:flex text-neutral-900 dark:text-white"
                 />
 
                 <div className="flex flex-col justify-center items-center md:hidden">
@@ -102,14 +102,14 @@ export function HomeSection() {
                     delay={150}
                     animateBy="letters"
                     direction="top"
-                    className="text-5xl  tracking-tighter "
+                    className="text-5xl tracking-tighter text-neutral-900 dark:text-white"
                   />
                   <BlurText
                     text="Developer"
                     delay={150}
                     animateBy="letters"
                     direction="top"
-                    className="text-5xl tracking-tighter "
+                    className="text-5xl tracking-tighter text-neutral-900 dark:text-white"
                   />
                 </div>
               </div>
@@ -127,7 +127,7 @@ export function HomeSection() {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 border border-gray-800 rounded hover:bg-neutral-700 transition-colors z-10"
+                    className="p-3 border border-neutral-300 dark:border-gray-800 rounded text-neutral-700 hover:text-black dark:text-neutral-300 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors z-10"
                     variants={iconVariants}
                     aria-label={item.label}
                     dangerouslySetInnerHTML={{ __html: item.icon }}
@@ -143,11 +143,11 @@ export function HomeSection() {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className=" md:h-[450px] md:w-[450px] h-[230px] w-[230px] overflow-hidden transition-all rounded-lg mix-blend-lighten">
+              <div className="md:h-[450px] md:w-[450px] h-[230px] w-[230px] overflow-hidden transition-all rounded-lg dark:mix-blend-lighten mix-blend-multiply">
                 <img
                   src="images/anuku2.png"
                   alt="photo"
-                  className="overflow-hidden z-40 filter shadow-inner 0 grayscale brightness-75"
+                  className="overflow-hidden z-40 filter shadow-inner grayscale dark:brightness-75 brightness-95"
                 />
               </div>
 
@@ -161,10 +161,11 @@ export function HomeSection() {
                   cy="253"
                   cx="253"
                   r="250"
-                  stroke="#ffffff"
+                  stroke="currentColor"
                   strokeWidth="8"
                   strokeLinecap="round"
                   strokeLinejoin="round"
+                  className="text-neutral-800 dark:text-white"
                   initial={{ strokeDasharray: "24 10 0 0" }}
                   animate={{
                     strokeDasharray: [
@@ -185,7 +186,7 @@ export function HomeSection() {
           </div>
 
           <motion.div
-            className="mt-10 "
+            className="mt-10"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -200,7 +201,6 @@ export function HomeSection() {
               pauseOnHover
               scaleOnHover={true}
               fadeOut
-              fadeOutColor="black"
               ariaLabel="Technology partners"
             />
           </motion.div>
@@ -221,7 +221,6 @@ export function HomeSection() {
               pauseOnHover
               scaleOnHover={true}
               fadeOut
-              fadeOutColor="black"
               ariaLabel="Technology partners"
             />
           </motion.div>

@@ -27,6 +27,9 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -40,75 +43,105 @@ export default function RootLayout({
     },
     {
       name: "About",
-      link: "#about",
+      link: "/#about",
     },
     {
       name: "Project",
-      link: "#project",
+      link: "/#project",
     },
 
     {
       name: "Services",
-      link: "#service",
+      link: "/#services",
     },
 
     {
       name: "Contact",
-      link: "#contact",
+      link: "/#contact",
     },
   ];
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var key = 'portfolio-theme';
+                  var stored = localStorage.getItem(key);
+                  var theme = stored || 'dark';
+                  if (theme === 'system') {
+                    theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                  }
+                  if (theme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased dark font-mono`}
+        suppressHydrationWarning
+        className={`${geistSans.variable} ${geistMono.variable} antialiased font-mono transition-colors duration-200`}
       >
-        <Navbar className="fixed">
-          <NavBody>
-            <NavbarLogo />
-            <NavItems items={navItems} />
-            <div className="flex items-center gap-4">
-              <NavbarButton variant="primary">Hire Me!</NavbarButton>
-            </div>
-          </NavBody>
-
-          <MobileNav>
-            <MobileNavHeader>
+        <ThemeProvider defaultTheme="dark" storageKey="portfolio-theme">
+          <Navbar className="fixed">
+            <NavBody>
               <NavbarLogo />
-              <MobileNavToggle
-                isOpen={isMobileMenuOpen}
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              />
-            </MobileNavHeader>
-
-            <MobileNavMenu
-              isOpen={isMobileMenuOpen}
-              onClose={() => setIsMobileMenuOpen(false)}
-            >
-              {navItems.map((item, idx) => (
-                <a
-                  key={`mobile-link-${idx}`}
-                  href={item.link}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="relative text-neutral-600 dark:text-neutral-300"
-                >
-                  <span className="block">{item.name}</span>
-                </a>
-              ))}
-              <div className="flex w-full flex-col gap-4">
-                <NavbarButton
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  variant="primary"
-                  className="w-full"
-                >
-                  Hire Me!
-                </NavbarButton>
+              <NavItems items={navItems} />
+              <div className="flex items-center gap-3">
+                <ThemeToggle />
+                <NavbarButton variant="primary">Hire Me!</NavbarButton>
               </div>
-            </MobileNavMenu>
-          </MobileNav>
-        </Navbar>
-        {children}
-        <Footer />
+            </NavBody>
+
+            <MobileNav>
+              <MobileNavHeader>
+                <NavbarLogo />
+                <div className="flex items-center gap-2">
+                  <ThemeToggle />
+                  <MobileNavToggle
+                    isOpen={isMobileMenuOpen}
+                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                  />
+                </div>
+              </MobileNavHeader>
+
+              <MobileNavMenu
+                isOpen={isMobileMenuOpen}
+                onClose={() => setIsMobileMenuOpen(false)}
+              >
+                {navItems.map((item, idx) => (
+                  <a
+                    key={`mobile-link-${idx}`}
+                    href={item.link}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="relative text-neutral-600 dark:text-neutral-300 hover:text-black dark:hover:text-white transition-colors"
+                  >
+                    <span className="block">{item.name}</span>
+                  </a>
+                ))}
+                <div className="flex w-full flex-col gap-4 pt-2 border-t border-neutral-200 dark:border-neutral-800">
+                  <NavbarButton
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    variant="primary"
+                    className="w-full"
+                  >
+                    Hire Me!
+                  </NavbarButton>
+                </div>
+              </MobileNavMenu>
+            </MobileNav>
+          </Navbar>
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -67,7 +67,7 @@ const SkillsList = () => {
           <li key={category} className="w-full">
             <div
               onClick={() => toggleItem(category)}
-              className="md:w-[400px] w-full bg-[#1414149c] rounded-2xl text-left hover:bg-opacity-80 transition-all border border-[var(--white-icon-tr)] cursor-pointer overflow-hidden"
+              className="md:w-[400px] w-full bg-white dark:bg-[#1414149c] rounded-2xl text-left hover:bg-opacity-80 transition-all border border-neutral-200 dark:border-[var(--white-icon-tr)] cursor-pointer overflow-hidden shadow-xs"
             >
               <div className="flex items-center gap-3 p-4">
                 {CategoryIcons[category as keyof typeof CategoryIcons]}

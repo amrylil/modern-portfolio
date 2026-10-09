@@ -28,11 +28,15 @@ const itemVariants: Variants = {
   },
 };
 
+import { useTheme } from "@/components/theme-provider";
+
 export function AboutSection() {
+  const { resolvedTheme } = useTheme();
+
   return (
     <motion.section
       id="about"
-      className="md:py-20 font-mono md:px-20 px-5"
+      className="md:py-20 font-mono md:px-20 px-5 text-neutral-900 dark:text-neutral-100"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
@@ -40,7 +44,7 @@ export function AboutSection() {
     >
       <div className="flex flex-col items-center max-w-7xl mx-auto">
         <motion.h2
-          className="md:text-7xl text-4xl tracking-tighter text-center md:mb-16 mb-5 bg-clip-text text-transparent bg-linear-to-r from-neutral-50 to-neutral-400"
+          className="md:text-7xl text-4xl tracking-tighter text-center md:mb-16 mb-5 bg-clip-text text-transparent bg-linear-to-r from-neutral-900 via-neutral-700 to-neutral-500 dark:from-neutral-50 dark:to-neutral-400 font-bold"
           variants={itemVariants}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0 }}
         >
@@ -48,7 +52,7 @@ export function AboutSection() {
         </motion.h2>
 
         <motion.p
-          className="font-light text-sm md:text-lg w-full text-justify hidden md:block text-neutral-300"
+          className="font-light text-sm md:text-lg w-full text-justify hidden md:block text-neutral-700 dark:text-neutral-300 leading-relaxed"
           variants={itemVariants}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
         >
@@ -56,7 +60,7 @@ export function AboutSection() {
         </motion.p>
 
         <motion.p
-          className="font-light text-xs md:text-lg w-full text-justify md:hidden text-neutral-300"
+          className="font-light text-xs md:text-lg w-full text-justify md:hidden text-neutral-700 dark:text-neutral-300 leading-relaxed"
           variants={itemVariants}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
         >
@@ -72,13 +76,13 @@ export function AboutSection() {
         </motion.p>
 
         <motion.div
-          className="flex flex-col md:flex-row rounded-lg shadow-lg border border-neutral-800 p-4 md:p-6 my-16 gap-7 w-full"
+          className="flex flex-col md:flex-row rounded-xl shadow-sm dark:shadow-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-50/70 dark:bg-neutral-950/40 p-4 md:p-6 my-16 gap-7 w-full"
           variants={itemVariants}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
         >
           <GitHubProfile />
-          <div className="w-full overflow-x-auto">
-            <GitHubCalendar username="amrylil" />
+          <div className="w-full overflow-x-auto flex items-center">
+            <GitHubCalendar username="amrylil" colorScheme={resolvedTheme} />
           </div>
         </motion.div>
       </div>

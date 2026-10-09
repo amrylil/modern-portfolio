@@ -1,67 +1,188 @@
 import { Project } from "@/app/project/page";
-import React from "react";
+import React, { useState } from "react";
+import { Play, Image as ImageIcon, ExternalLink, Github, X } from "lucide-react";
 
 interface ModalProps {
   project: Project;
   onClose: () => void;
 }
 
+// Helper to check if URL is YouTube
+function getYouTubeEmbedUrl(url: string): string | null {
+  if (!url) return null;
+  const match = url.match(
+    /(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/
+  );
+  return match ? `https://www.youtube.com/embed/${match[1]}?autoplay=0` : null;
+}
+
 export const ProjectModal: React.FC<ModalProps> = ({ project, onClose }) => {
-  // Gunakan styling yang mirip dengan card Anda
+  // Combine all images into array
+  const allImages = project.images && project.images.length > 0
+    ? project.images
+    : project.image
+    ? [project.image]
+    : [];
+
+  const [activeMediaTab, setActiveMediaTab] = useState<"images" | "video">(
+    project.videoUrl ? "video" : "images"
+  );
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+
+  const youtubeEmbedUrl = project.videoUrl ? getYouTubeEmbedUrl(project.videoUrl) : null;
+  const isDirectVideo = project.videoUrl && !youtubeEmbedUrl;
+
   return (
     <div
       onClick={onClose}
-      className="fixed inset-0 z-50 flex items-center justify-center bg bg-opacity-80 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 dark:bg-black/80 backdrop-blur-md p-4 overflow-y-auto"
     >
       <div
-        onClick={(e) => e.stopPropagation()} // Mencegah klik di dalam modal menutup modal
-        className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-lg border border-neutral-600 bg-[#141414] text-[var(--white)] p-6 md:p-8"
+        onClick={(e) => e.stopPropagation()}
+        className="relative w-full max-w-4xl max-h-[92vh] overflow-y-auto rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 p-6 md:p-8 shadow-2xl"
       >
-        {/* Tombol Close */}
+        {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-[var(--white-icon)] hover:text-white transition-colors"
+          className="absolute top-4 right-4 p-2 rounded-full bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors z-20 cursor-pointer"
           aria-label="Close modal"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="size-7"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M6 18 18 6M6 6l12 12"
-            />
-          </svg>
+          <X className="h-5 w-5" />
         </button>
 
-        {/* Konten Modal */}
-        <div className="flex flex-col gap-4">
-          <h3 className="text-3xl md:text-4xl font-medium">{project.title}</h3>
-          <span className="py-1 px-3 text-sm text-[var(--white-icon)] bg-[var(--white-icon-tr)] rounded-full self-start">
-            {project.status}
-          </span>
+        {/* Media Preview Tabs (Screenshots / Video Demo) */}
+        {(allImages.length > 0 || project.videoUrl) && (
+          <div className="mb-6">
+            {/* Tab switch if both video and images exist */}
+            {project.videoUrl && allImages.length > 0 && (
+              <div className="flex gap-2 mb-3">
+                <button
+                  onClick={() => setActiveMediaTab("images")}
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition cursor-pointer ${
+                    activeMediaTab === "images"
+                      ? "bg-neutral-900 text-white dark:bg-neutral-200 dark:text-neutral-900 font-semibold"
+                      : "bg-neutral-100 text-neutral-700 hover:text-black dark:bg-neutral-900 dark:text-neutral-400 dark:hover:text-white border border-neutral-200 dark:border-neutral-800"
+                  }`}
+                >
+                  <ImageIcon className="h-3.5 w-3.5" />
+                  Screenshots ({allImages.length})
+                </button>
+                <button
+                  onClick={() => setActiveMediaTab("video")}
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition cursor-pointer ${
+                    activeMediaTab === "video"
+                      ? "bg-red-600 text-white font-semibold"
+                      : "bg-neutral-100 text-neutral-700 hover:text-black dark:bg-neutral-900 dark:text-neutral-400 dark:hover:text-white border border-neutral-200 dark:border-neutral-800"
+                  }`}
+                >
+                  <Play className="h-3.5 w-3.5" />
+                  Video Demo
+                </button>
+              </div>
+            )}
 
-          <div className="border-t border-neutral-700 pt-4">
-            <h4 className="text-xl font-semibold mb-2 text-[var(--sec)]">
-              Project Description
-            </h4>
-            <p className="text-neutral-300">{project.description}</p>
+            {/* Video Player Display */}
+            {activeMediaTab === "video" && project.videoUrl && (
+              <div className="rounded-xl overflow-hidden border border-neutral-200 dark:border-neutral-800 bg-black aspect-video relative">
+                {youtubeEmbedUrl ? (
+                  <iframe
+                    src={youtubeEmbedUrl}
+                    title={`${project.title} Video Demo`}
+                    className="w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                ) : isDirectVideo ? (
+                  <video
+                    src={project.videoUrl}
+                    controls
+                    poster={project.image}
+                    className="w-full h-full object-contain bg-black"
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                ) : (
+                  <div className="w-full h-full flex flex-col items-center justify-center text-neutral-400 p-6 text-center">
+                    <p className="text-sm mb-2">Video link available:</p>
+                    <a
+                      href={project.videoUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-blue-500 underline text-sm break-all"
+                    >
+                      {project.videoUrl}
+                    </a>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Image Gallery Display */}
+            {activeMediaTab === "images" && allImages.length > 0 && (
+              <div>
+                {/* Main Large Image */}
+                <div className="rounded-xl overflow-hidden border border-neutral-200 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-900 max-h-[420px] flex items-center justify-center">
+                  <img
+                    src={allImages[selectedImageIndex] || allImages[0]}
+                    alt={`${project.title} preview ${selectedImageIndex + 1}`}
+                    className="w-full h-[380px] object-contain rounded-lg"
+                  />
+                </div>
+
+                {/* Thumbnails if more than 1 image */}
+                {allImages.length > 1 && (
+                  <div className="flex gap-2 mt-3 overflow-x-auto pb-2">
+                    {allImages.map((img, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setSelectedImageIndex(idx)}
+                        className={`h-16 w-24 flex-shrink-0 rounded-lg overflow-hidden border-2 transition cursor-pointer ${
+                          selectedImageIndex === idx
+                            ? "border-neutral-900 dark:border-white scale-105 shadow-md"
+                            : "border-neutral-200 dark:border-neutral-800 opacity-60 hover:opacity-100"
+                        }`}
+                      >
+                        <img
+                          src={img}
+                          alt={`Thumbnail ${idx + 1}`}
+                          className="w-full h-full object-cover"
+                        />
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Modal Info Content */}
+        <div className="flex flex-col gap-4">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <h3 className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white">{project.title}</h3>
+            <span className="py-1 px-3 text-xs text-neutral-700 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-full font-medium">
+              {project.status}
+            </span>
           </div>
 
-          <div className="border-t border-neutral-700 pt-4">
-            <h4 className="text-xl font-semibold mb-3 text-[var(--sec)]">
-              Tools & Tecnologies
+          <div className="border-t border-neutral-200 dark:border-neutral-800 pt-4">
+            <h4 className="text-sm font-semibold mb-2 text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">
+              Project Description
+            </h4>
+            <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed text-sm md:text-base">
+              {project.description}
+            </p>
+          </div>
+
+          <div className="border-t border-neutral-200 dark:border-neutral-800 pt-4">
+            <h4 className="text-sm font-semibold mb-3 text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">
+              Tools & Technologies
             </h4>
             <div className="flex flex-wrap gap-2">
-              {project.tools.map((tool) => (
+              {project.tools?.map((tool) => (
                 <span
                   key={tool}
-                  className="py-1 px-3 text-sm bg-neutral-700 rounded-md"
+                  className="py-1 px-3 text-xs bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-neutral-800 dark:text-neutral-300 rounded-md font-mono"
                 >
                   {tool}
                 </span>
@@ -69,77 +190,49 @@ export const ProjectModal: React.FC<ModalProps> = ({ project, onClose }) => {
             </div>
           </div>
 
-          {/* Tombol Link (Sama seperti di card) */}
-          <div className="flex gap-4 mt-6 border-t border-neutral-700 pt-6">
-            {/* Tombol GitHub */}
-            {!project.privateRepo && project.link ? (
+          {/* Action Links */}
+          <div className="flex flex-wrap gap-3 mt-4 border-t border-neutral-200 dark:border-neutral-800 pt-5">
+            {/* GitHub Button */}
+            {!project.privateRepo && !project.isPrivate && project.link ? (
               <a
                 target="_blank"
                 href={project.link}
                 aria-label="GitHub"
                 rel="noopener noreferrer"
-                className="flex-1 flex justify-center items-center gap-2 text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+                className="flex-1 min-w-[140px] flex justify-center items-center gap-2 text-neutral-800 dark:text-neutral-300 hover:text-black dark:hover:text-white transition border border-neutral-300 dark:border-neutral-700 hover:border-neutral-500 p-3 rounded-xl bg-neutral-100 dark:bg-neutral-900/80 hover:bg-neutral-200 dark:hover:bg-neutral-800 text-sm font-medium"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="size-7"
-                >
-                  <path d="M24 12L18.3431 17.6569L16.9289 16.2426L21.1716 12L16.9289 7.75736L18.3431 6.34315L24 12ZM2.82843 12L7.07107 16.2426L5.65685 17.6569L0 12L5.65685 6.34315L7.07107 7.75736L2.82843 12ZM9.78845 21H7.66009L14.2116 3H16.3399L9.78845 21Z" />
-                </svg>
-                <span>Kode</span>
+                <Github className="h-4 w-4" />
+                <span>Source Code</span>
               </a>
             ) : (
               <div
-                className="flex-1 flex justify-center items-center gap-2 text-neutral-500 border border-neutral-700 p-3 rounded-xl bg-[#14141450] cursor-not-allowed"
+                className="flex-1 min-w-[140px] flex justify-center items-center gap-2 text-neutral-400 dark:text-neutral-600 border border-neutral-200 dark:border-neutral-800/80 p-3 rounded-xl bg-neutral-50 dark:bg-neutral-950/60 cursor-not-allowed text-sm"
                 title="Private Repository"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  className="size-7"
-                >
-                  <path d="M12 17a1.5 1.5 0 0 0 0-3 1.5 1.5 0 0 0 0 3zm6-6V9a6 6 0 1 0-12 0v2a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2zm-8-2a4 4 0 1 1 8 0v2H10V9z" />
-                </svg>
-                <span>Private</span>
+                <Github className="h-4 w-4" />
+                <span>Private Repository</span>
               </div>
             )}
 
-            {/* Tombol Preview */}
+            {/* Live Preview Button */}
             {project.preview ? (
               <a
                 target="_blank"
                 href={project.preview}
                 aria-label="Preview"
                 rel="noopener noreferrer"
-                className="flex-1 flex justify-center items-center gap-2 text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+                className="flex-1 min-w-[140px] flex justify-center items-center gap-2 text-white transition border border-neutral-900 dark:border-neutral-600 hover:border-black dark:hover:border-white p-3 rounded-xl bg-neutral-900 hover:bg-neutral-800 dark:bg-neutral-800 dark:hover:bg-neutral-700 text-sm font-medium shadow-sm"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="size-7"
-                >
-                  <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z" />
-                </svg>
+                <ExternalLink className="h-4 w-4" />
                 <span>Live Preview</span>
               </a>
             ) : (
               <div
-                className="flex-1 flex justify-center items-center gap-2 text-neutral-500 border border-neutral-700 p-3 rounded-xl bg-[#14141450] cursor-not-allowed"
+                className="flex-1 min-w-[140px] flex justify-center items-center gap-2 text-neutral-400 dark:text-neutral-600 border border-neutral-200 dark:border-neutral-800/80 p-3 rounded-xl bg-neutral-50 dark:bg-neutral-950/60 cursor-not-allowed text-sm"
                 title="Preview not available"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  className="size-7"
-                >
-                  <path d="M21.707 20.293 3.707 2.293 2.293 3.707l2.42 2.42A11.706 11.706 0 0 0 .62 12c1.73 4.35 6.36 7.5 11.38 7.5 2.17 0 4.26-.6 6.07-1.7l2.23 2.23 1.414-1.414zM12 17.5c-4.02 0-7.64-2.36-9.18-5.5a10.12 10.12 0 0 1 3.16-3.59l1.53 1.53A5 5 0 0 0 12 15a4.98 4.98 0 0 0 2.56-.7l1.41 1.41A10.73 10.73 0 0 1 12 17.5zM12 7a5 5 0 0 1 5 5 4.97 4.97 0 0 1-.32 1.73l1.55 1.55A10.93 10.93 0 0 0 23.38 12C21.65 7.65 17.02 4.5 12 4.5c-.8 0-1.6.07-2.36.2l1.65 1.65A5.07 5.07 0 0 1 12 7z" />
-                </svg>
-                <span>No Preview</span>
+                <ExternalLink className="h-4 w-4" />
+                <span>No Live Preview</span>
               </div>
             )}
           </div>

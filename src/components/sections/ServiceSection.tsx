@@ -19,7 +19,7 @@ interface ServiceAccordionItemProps {
 const serviceData: ServiceItem[] = [
   {
     title: "Web Development",
-    icon: <Globe className="h-6 w-6 text-slate-50" />,
+    icon: <Globe className="h-6 w-6 text-neutral-800 dark:text-slate-50" />,
     content: [
       "Single Page Applications (SPAs)",
       "Landing pages and business websites",
@@ -29,7 +29,7 @@ const serviceData: ServiceItem[] = [
   },
   {
     title: "Mobile Development",
-    icon: <Smartphone className="h-6 w-6 text-slate-50" />,
+    icon: <Smartphone className="h-6 w-6 text-neutral-800 dark:text-slate-50" />,
     content: [
       "Cross-platform development (React Native)",
       "Native iOS & Android (learning)",
@@ -38,7 +38,7 @@ const serviceData: ServiceItem[] = [
   },
   {
     title: "UI/UX Design & Prototyping",
-    icon: <Paintbrush className="h-6 w-6 text-slate-50" />,
+    icon: <Paintbrush className="h-6 w-6 text-neutral-800 dark:text-slate-50" />,
     content: [
       "Wireframing and low-fidelity mockups",
       "High-fidelity interactive prototypes (Figma)",
@@ -47,7 +47,7 @@ const serviceData: ServiceItem[] = [
   },
   {
     title: "Backend & DevOps",
-    icon: <Code className="h-6 w-6 text-slate-50" />,
+    icon: <Code className="h-6 w-6 text-neutral-800 dark:text-slate-50" />,
     content: [
       "RESTful API development (Golang, Express.js)",
       "Database management (PostgreSQL, SQL Server)",
@@ -112,16 +112,16 @@ const ServiceAccordionItem: React.FC<ServiceAccordionItemProps> = ({
   return (
     <motion.div
       id="service"
-      className="border border-neutral-800 rounded-lg flex flex-col mt-2   p-5 "
+      className="border border-neutral-200 dark:border-neutral-800 bg-white/70 dark:bg-neutral-950/40 rounded-lg flex flex-col mt-2 p-5 shadow-xs"
       variants={itemVariants}
     >
       <button
         onClick={onToggle}
-        className="flex w-full items-center justify-between gap-4 text-left rounded"
+        className="flex w-full items-center justify-between gap-4 text-left rounded cursor-pointer"
       >
         <div className="flex items-center gap-4">
           {item.icon}
-          <span className="text-lg font-medium text-neutral-100">
+          <span className="text-lg font-medium text-neutral-900 dark:text-neutral-100">
             {item.title}
           </span>
         </div>
@@ -129,7 +129,7 @@ const ServiceAccordionItem: React.FC<ServiceAccordionItemProps> = ({
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3 }}
         >
-          <ChevronDown className="h-5 w-5 text-neutral-400" />
+          <ChevronDown className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
         </motion.span>
       </button>
 
@@ -143,7 +143,7 @@ const ServiceAccordionItem: React.FC<ServiceAccordionItemProps> = ({
             variants={accordionContentVariants}
             className="overflow-hidden"
           >
-            <ul className="list-disc list-inside space-y-2 pb-6 pl-2 text-neutral-400">
+            <ul className="list-disc list-inside space-y-2 pb-6 pl-2 text-neutral-600 dark:text-neutral-400">
               {item.content.map((point, index) => (
                 <li key={index}>{point}</li>
               ))}
@@ -204,7 +204,7 @@ export default function ServiceSection(): React.ReactElement {
   return (
     <motion.section
       id="services"
-      className="w-full  py-20 text-neutral-200"
+      className="w-full py-20 text-neutral-900 dark:text-neutral-200"
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
@@ -212,13 +212,13 @@ export default function ServiceSection(): React.ReactElement {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-8 md:px-12 lg:px-20">
         <motion.div variants={itemVariants}>
-          <h2 className="md:text-7xl text-4xl tracking-tighter mb-10">
+          <h2 className="md:text-7xl text-4xl tracking-tighter mb-10 text-neutral-900 dark:text-neutral-100 font-bold">
             What I do?
           </h2>
         </motion.div>
         <motion.p
           variants={itemVariants}
-          className="md:text-xl text-base text-neutral-400 mb-10 max-w-3xl"
+          className="md:text-xl text-base text-neutral-600 dark:text-neutral-400 mb-10 max-w-3xl"
         >
           I specialize in building high-performance web applications, designing
           RESTful APIs, and creating seamless user experiences using modern
@@ -227,7 +227,7 @@ export default function ServiceSection(): React.ReactElement {
 
         <div className="grid grid-cols-1 items-start gap-12 md:grid-cols-2">
           <motion.div
-            className="rounded-lg   -translate-y-2"
+            className="rounded-lg -translate-y-2"
             variants={itemVariants}
           >
             {serviceData.map((item, index) => (
@@ -240,7 +240,7 @@ export default function ServiceSection(): React.ReactElement {
             ))}
           </motion.div>
 
-          <div className="flex justify-center md:w-full md:h-[292px] size-[290px">
+          <div className="flex justify-center md:w-full md:h-[292px] size-[290px] rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-900/5 dark:bg-neutral-950/40 overflow-hidden">
             <LetterGlitch
               glitchColors={["#5e4491", "#A476FF", "#241a38"]}
               glitchSpeed={33}
